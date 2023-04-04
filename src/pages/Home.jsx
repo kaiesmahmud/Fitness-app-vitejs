@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 //elements
 import { Box } from '@mui/material'
 //components
@@ -7,11 +7,23 @@ import Search from '../components/Search'
 import Exercises from '../components/Exercises'
 
 const Home = () => {
+   // for storing user search value fetch results
+   const [exercises, setExercises] = useState([])
+   //for specifit body part
+   const [bodyPart, setBodyPart] = useState("all")
   return (
     <div>
       <Header />
-      <Search />
-      <Exercises/>
+      <Search  
+        setExercises={setExercises} 
+        bodyPart={bodyPart} 
+        setBodyPart={setBodyPart} 
+      />
+      <Exercises
+        setExercises={setExercises} 
+        bodyPart={bodyPart} 
+        setBodyPart={setBodyPart} 
+      />
     </div>
   )
 }
