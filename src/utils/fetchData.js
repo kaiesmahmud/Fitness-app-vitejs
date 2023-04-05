@@ -8,7 +8,7 @@
       'X-RapidAPI-Host': 'exercisedb.p.rapidapi.com'
     }
   };
-  export const youtubeUrl =  'https://youtube-search-and-download.p.rapidapi.com/channel/about'
+  export const youtubeUrl =  'https://youtube-search-and-download.p.rapidapi.com'
   export const youTybeOptions = {
     method: 'GET',
     
