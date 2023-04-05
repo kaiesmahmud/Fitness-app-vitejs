@@ -21,6 +21,7 @@ const ExerciseDetails = () => {
   const [equipmentExercises, setEquipmentExercises] = useState([])
   // --------------------------------------------------------------------------------------------------------------------
   useEffect(()=>{
+    window.scrollTo({ top: "0", behavior: 'smooth' });
     const fetchExercisesData = async ()=>{
       //===============specific exercise data fetching================================================================
       const exerciseDetailData = await fetchData(`${url}/exercise/${id}`, exerciseOptions);
