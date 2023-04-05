@@ -1,6 +1,6 @@
 import React from 'react'
 //elements
-import { Box, Button, Stack, Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
 //img
 import banner from '../assets/images/banner.png'
 

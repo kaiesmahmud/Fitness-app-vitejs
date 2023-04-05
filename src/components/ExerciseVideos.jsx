@@ -1,12 +1,11 @@
 import React from 'react'
-import { Box, Stack, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import Slider from 'react-slick';
 
 //Slick Css for Carousel
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import '../slick.css'
-
 
 const ExerciseVideos = ({exerciseVideos, name}) => {
   const settings = {

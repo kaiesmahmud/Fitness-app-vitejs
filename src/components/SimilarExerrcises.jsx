@@ -1,10 +1,9 @@
 import React from 'react'
 import Slider from 'react-slick';
-import { Box, Stack, Typography } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 //components
 import Loader from './Loader'
 import ExerciseCard from './ExerciseCard'
-import Exercises from './Exercises'
 
 //Slick Css for Carousel
 import "slick-carousel/slick/slick.css"; 
