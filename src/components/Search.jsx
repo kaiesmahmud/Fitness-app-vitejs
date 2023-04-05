@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Box, Button, Stack, TextField, Typography } from '@mui/material'
 //Fetch Data from Utils
 import { fetchData, exerciseOptions, url } from '../utils/fetchData';
-import HorizontalScrollbar from './HorizontalScrollbar';
+import SlickSlider from './SlickSlider';
 
 const Search = ({bodyPart, setBodyPart, setExercises}) => {
   //for storing user search value
@@ -108,7 +108,7 @@ const Search = ({bodyPart, setBodyPart, setExercises}) => {
           p: '20px'
         }}
       >
-        <HorizontalScrollbar data={bodyParts} bodyPart={bodyPart}  setBodyPart={setBodyPart} />
+        <SlickSlider data={bodyParts} bodyPart={bodyPart}  setBodyPart={setBodyPart} />
       </Box>
     </Stack>
   )

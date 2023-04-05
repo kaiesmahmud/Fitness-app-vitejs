@@ -9,10 +9,11 @@ const BodyPart = ({item, bodyPart, setBodyPart}) => {
         type="button"
         alignItems={'center'}
         justifyContent={"center"}
-        className='bodyPart-card'
+        // className='bodyPart-card'
+        className='shadow-lg'
         sx={{
             bgcolor: '#fff',
-            width:'270px',
+            width:{xs:"90%",sm:'200px', md:'80%', lg:'80%'},
             height:'280px',
             cursor:"pointer",
             gap:'47px',
@@ -24,7 +25,7 @@ const BodyPart = ({item, bodyPart, setBodyPart}) => {
             src={icon}
             alt='dummybel'
             className='body-part-icon w-[40px]' />
-
+        <p>{item}</p>
     </Stack>
   )
 }
