@@ -10,28 +10,45 @@ import ExerciseVideos from '../components/ExerciseVideos'
 import SimilarExerrcises from '../components/SimilarExerrcises'
 
 const ExerciseDetails = () => {
-  const [exerciseDetail, setExerciseDetail] = useState({})
-  const [exerciseVideos, setExerciseVideos] = useState([])
   const {id} = useParams();
-  
+  // For Selected Exercise Details
+  const [exerciseDetail, setExerciseDetail] = useState({})
+  // For Youtube search results api
+  const [exerciseVideos, setExerciseVideos] = useState([])
+  // For targeted Muscles more api
+  const [targetMuscleExercises, setTargetMuscleExercises] = useState([])
+  // For equipments more api
+  const [equipmentExercises, setEquipmentExercises] = useState([])
+  // --------------------------------------------------------------------------------------------------------------------
   useEffect(()=>{
     const fetchExercisesData = async ()=>{
+      //===============specific exercise data fetching================================================================
       const exerciseDetailData = await fetchData(`${url}/exercise/${id}`, exerciseOptions);
       setExerciseDetail(exerciseDetailData)
       console.log("Fetch single data", exerciseDetailData)
-      
+      //===========Youtube videos api data fetching====================================================================
       const videosData = await fetchData(`${youtubeUrl}/search?query=${exerciseDetailData.name}`,youTybeOptions);
       setExerciseVideos(videosData);
       console.log("Fetch single Exercise videos data", videosData)
-
+      
+      //=====similar target Muscle Exercises Data  fetching=============================================================
+      const targetMuscleExercisesData = await fetchData(`${url}/target/${exerciseDetailData.target}`, exerciseOptions);
+      console.log("Fetch similar TargetMuscle Exercise data", targetMuscleExercisesData)
+      setTargetMuscleExercises(targetMuscleExercisesData)
+      //=====similar equipment Exercises Data fetching===================================================================
+      const equipmentExercisesData = await fetchData(`${url}/equipment/${exerciseDetailData.equipment}`, exerciseOptions);
+      console.log("Fetch similar equipment Exercises Data", equipmentExercisesData)
+      setEquipmentExercises(equipmentExercisesData)
     }
     fetchExercisesData()
   },[id])
+    // --------------------------------------------------------------------------------------------------------------------
+
   return (
     <Box>
       <Detail exerciseDetail={exerciseDetail} />
       <ExerciseVideos  exerciseVideos={exerciseVideos.contents} name={exerciseDetail.name} />
-      <SimilarExerrcises />
+      <SimilarExerrcises targetMuscleExercises={targetMuscleExercises} equipmentExercises={equipmentExercises} />
     </Box>
   )
 }
