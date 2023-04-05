@@ -20,9 +20,11 @@ const Home = () => {
         setBodyPart={setBodyPart} 
       />
       <Exercises
+        title="Showing Result"
         setExercises={setExercises} 
         bodyPart={bodyPart} 
         exercises={exercises} 
+        itemsPerPage={6}
       />
     </div>
   )

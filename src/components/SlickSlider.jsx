@@ -8,6 +8,7 @@ import { Box } from '@mui/material';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import '../slick.css'
+
 const SlickSlider = ({data, bodyPart, setBodyPart}) => {
     const settings = {
         dots: true,
