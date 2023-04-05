@@ -20,6 +20,10 @@ const BodyPart = ({item, bodyPart, setBodyPart}) => {
             borderBottomLeftRadius:'20px',
             borderTop:bodyPart === item ?'4px solid #ff2625': "none"
         }}
+        onClick={() => {
+          setBodyPart(item);
+          window.scrollTo({ top: 1800, left: 100, behavior: 'smooth' });
+        }}
     >
         <img
             src={icon}

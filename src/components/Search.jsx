@@ -18,6 +18,12 @@ const Search = ({bodyPart, setBodyPart, setExercises}) => {
       const bodyPartsData = await fetchData(`${url}/bodyPartList`, exerciseOptions)
       setBodyParts(['all', ...bodyPartsData])
       console.log(bodyPartsData)
+      if(!search){
+        const exercisesData = await fetchData(url, exerciseOptions)
+        setExercises(exercisesData.slice(0,12))
+
+      }
+
     }
 
     fetchExercisesData();
